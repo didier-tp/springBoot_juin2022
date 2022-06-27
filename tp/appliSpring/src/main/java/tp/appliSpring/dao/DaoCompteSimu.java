@@ -3,8 +3,13 @@ package tp.appliSpring.dao;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
 import tp.appliSpring.entity.Compte;
 
+@Repository //ou bien @Component
+@Qualifier("simu")
 public class DaoCompteSimu implements DaoCompte{
 	
 	private long compteur=0;

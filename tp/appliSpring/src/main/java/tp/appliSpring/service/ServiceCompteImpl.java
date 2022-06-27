@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import tp.appliSpring.dao.DaoCompte;
@@ -13,6 +14,7 @@ import tp.appliSpring.entity.Compte;
 @Service //classe de Service prise en charge par spring
 public class ServiceCompteImpl implements ServiceCompte{
 	
+	@Qualifier("simu") //ou bien @Qualifier("jpa")
 	@Autowired //injection de dépendance par annotation
 	           //daoCompte sera initialisée par Spring pour
 	           //référencer un composant existant compatible 

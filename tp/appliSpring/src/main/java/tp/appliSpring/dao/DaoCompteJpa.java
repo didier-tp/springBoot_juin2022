@@ -3,12 +3,14 @@ package tp.appliSpring.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import tp.appliSpring.entity.Compte;
 
 @Repository //@Component de type DAO/Repository
+@Qualifier("jpa")
 public class DaoCompteJpa implements DaoCompte {
 	                    //initialiser entityManager via META-INF/persistence.xml si pas springBoot
 	@PersistenceContext //initialiser entityManager via application.properties au sein d'un projet SpringBoot
