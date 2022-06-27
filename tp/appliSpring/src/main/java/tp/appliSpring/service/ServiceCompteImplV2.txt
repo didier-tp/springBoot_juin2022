@@ -13,26 +13,17 @@ import tp.appliSpring.entity.Compte;
 @Service //classe de Service prise en charge par spring
 public class ServiceCompteImpl implements ServiceCompte{
 	
-	@Autowired //injection de dépendance par annotation
-	           //daoCompte sera initialisée par Spring pour
-	           //référencer un composant existant compatible 
-	           //avec l'interface DaoCompte
-	//@Inject du concurrent CDI se comporte exactement pareil que @Autowired
+	
 	private DaoCompte daoCompte=null;
 	
-	
-
-	public ServiceCompteImpl() {
+	//injection par constructeur qui sera automatiquement appelé par Spring
+	//dès la construction, spring passera en paramètre une référence vers un composant existant
+	//compatible avec l'interface DaoCompte
+	public ServiceCompteImpl(DaoCompte daoCompte) {
 		super();
-		System.out.println("dans constructeur de ServiceCompteImpl , daoCompte="+daoCompte);
-		//impossible de déleguer des appels à daoCompte qui est null
+		this.daoCompte = daoCompte;
 	}
 	
-	@PostConstruct()
-	public void initialiser() {
-		System.out.println("dans méthode préfixée par @PostConstruct() , daoCompte="+daoCompte);
-		//possible ici de déleguer des appels à daoCompte qui n'est plus null
-	}
 
 	@Override
 	public Compte rechercherCompteParNumero(long numero) {
