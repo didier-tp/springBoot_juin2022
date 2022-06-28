@@ -15,7 +15,7 @@ import tp.appliSpring.entity.Compte;
 public class ServiceCompteImpl implements ServiceCompte{
 	
 	//@Qualifier("simu") //ou bien 
-	@Qualifier("jpa")
+	//@Qualifier("jpa") pour anciennes versions sans spring-data
 	@Autowired //injection de dépendance par annotation
 	           //daoCompte sera initialisée par Spring pour
 	           //référencer un composant existant compatible 
@@ -39,7 +39,7 @@ public class ServiceCompteImpl implements ServiceCompte{
 
 	@Override
 	public Compte rechercherCompteParNumero(long numero) {
-		return daoCompte.findById(numero);
+		return daoCompte.findById(numero).orElse(null);
 	}
 	
 	@Override
