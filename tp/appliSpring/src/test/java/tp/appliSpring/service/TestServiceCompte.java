@@ -52,6 +52,21 @@ public class TestServiceCompte {
 	}
 	
 	@Test
+	public void testBonTransfert() {
+		Compte cptA = new Compte(null,"compteA",100.0);
+		Compte cptA_sauvegarde = serviceCompte.sauvegarderCompte(cptA);
+		Compte cptB = new Compte(null,"compteB",50.0);
+		Compte cptB_sauvegarde = serviceCompte.sauvegarderCompte(cptB);
+		logger.debug("avant bon virement:" + cptA.getSolde() +  " " + cptB.getSolde() );
+	    serviceCompte.transferer(20, cptA_sauvegarde.getNumero(), cptB_sauvegarde.getNumero());
+	    Compte cptA_relu = serviceCompte.rechercherCompteParNumero(cptA_sauvegarde.getNumero());
+	    Compte cptB_relu = serviceCompte.rechercherCompteParNumero(cptB_sauvegarde.getNumero());
+	    logger.debug("apres bon virement:" + cptA_relu.getSolde() +  " " + cptB_relu.getSolde() );
+	    Assertions.assertEquals(cptA.getSolde() - 20, cptA_relu.getSolde(),0.00001);
+	    Assertions.assertEquals(cptB.getSolde()  + 20, cptB_relu.getSolde(),0.00001);
+	}
+	
+	@Test
 	public void testRechercherCompte() {
 		Compte cptA = new Compte(null,"compteA",100.0);
 		Compte cptA_sauvegarde = serviceCompte.sauvegarderCompte(cptA);
