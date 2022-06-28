@@ -18,4 +18,8 @@ public interface DaoCompte extends JpaRepository<Compte,Long>{
      
     //methode de recherche complémentaire selon convention de nom de méthode
 	List<Compte>  findBySoldeGreaterThanEqual(double soldeMini);
+	List<Compte>  findByClientId(long numClient);
+	             //Compte comporte client d'où findByClient
+	             //et Commpte.client comporte id d'où findByClientId
+	
 }
