@@ -5,8 +5,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import tp.appliSpring.dao.DaoCompte;
 import tp.appliSpring.entity.Compte;
@@ -67,8 +67,14 @@ public class ServiceCompteImpl implements ServiceCompte{
 	}
 
 	@Override
+	//@Transactional
 	public void transferer(double montant, long numCptDeb, long numCptCred) {
-		// TODO Auto-generated method stub
+		Compte cptDeb = daoCompte.findById(numCptDeb).get();
+		cptDeb.setSolde(cptDeb.getSolde() - montant);
+		daoCompte.save(cptDeb); //utile que si pas de @Transactional
 		
+		Compte cptCred = daoCompte.findById(numCptCred).get();
+		cptCred.setSolde(cptCred.getSolde() + montant);
+		daoCompte.save(cptCred); //utile que si pas de @Transactional
 	}
 }

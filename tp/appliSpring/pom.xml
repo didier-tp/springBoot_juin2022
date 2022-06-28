@@ -30,6 +30,12 @@
 		    <artifactId>h2</artifactId>
 		    <version>2.1.214</version>
 		</dependency>
+		
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.28</version>
+		</dependency>
 
 		
 		<dependency>
@@ -71,6 +77,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <!-- nb: version 3.2.0 avec bug a priori -->
+            </plugin>
 			<!--
 			 <plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
