@@ -8,11 +8,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="CLIENT")
+@NamedQuery(name="Client.findByIdWithComptes",
+            query="SELECT cli FROM Client cli LEFT JOIN FETCH cli.comptes cpt WHERE cli.id = ?1")
 public class Client {
 
     @Id //pk

@@ -45,9 +45,14 @@ public class TestServiceClient {
 		serviceCompte.sauvegarderCompte(new Compte(null,"compteC",80.0));
 		serviceCompte.sauvegarderCompte(new Compte(null,"compteD",20.0));
 		
-		Client client1_relu = serviceClient.rechercherClientParId(client1.getId());
+		//Client client1_relu = serviceClient.rechercherClientParId(client1.getId());
+		Client client1_relu = serviceClient.rechercherClientAvecComptesParId(client1.getId());
 		logger.debug("client1_relu:" + client1_relu.getPrenom());
 		Assertions.assertEquals("jean", client1_relu.getPrenom());
+		//afficher en boucle les comptes ratachés au client en exploitant le lien @OneToMany
+		for(Compte cpt : client1_relu.getComptes()) {
+			logger.debug("\t " + cpt.toString());
+		}
 		
 	}
 

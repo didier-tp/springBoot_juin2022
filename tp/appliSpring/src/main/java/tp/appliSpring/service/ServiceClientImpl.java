@@ -21,8 +21,7 @@ public class ServiceClientImpl implements ServiceClient {
 
 	@Override
 	public Client rechercherClientAvecComptesParId(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return daoClient.findByIdWithComptes(id);
 	}
 
 	@Override
