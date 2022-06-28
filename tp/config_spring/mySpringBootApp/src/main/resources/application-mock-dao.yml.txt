@@ -1,0 +1,7 @@
+# .yml (ou .yaml) = syntaxe alternative à .properties
+# IMPORTANT = indentation via double espaces mais pas de tabulation !
+
+spring:
+    jpa:
+      repositories:
+        enabled: false

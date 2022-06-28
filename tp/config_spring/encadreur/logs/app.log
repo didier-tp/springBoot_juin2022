@@ -1,0 +1,10 @@
+2022-06-23 21:11:44.563 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testEncadreurPartiel(TestEncadreur.java:85)] - avec Encadreur partiel 1, sRes1=**==azerty
+2022-06-23 21:11:44.567 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testEncadreurPartiel(TestEncadreur.java:90)] - avec Encadreur partiel 2, sRes2=azerty==**
+2022-06-23 21:11:44.567 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testEncadreurAvecEgal(TestEncadreur.java:70)] - avec Encadreur Egal, sRes1=**==azerty==**
+2022-06-23 21:11:44.568 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testEncadreurAvecEgal(TestEncadreur.java:73)] - avec Encadreur Egal et Format, sRes2=**==AZERTY==**
+2022-06-23 21:11:44.569 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testEncadreurAvecTiret(TestEncadreur.java:56)] - avec Encadreur Tiret, sRes1=**--azerty--**
+2022-06-23 21:11:44.570 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testEncadreurAvecTiret(TestEncadreur.java:59)] - avec Encadreur Tiret et Format, sRes2=**--AZERTY--**
+2022-06-23 21:11:44.571 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testSuffixeur(TestEncadreur.java:28)] - avec SuffixeurAvecSperateurTiret, sRes1=azerty--**
+2022-06-23 21:11:44.571 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testSuffixeur(TestEncadreur.java:32)] - avec SuffixeurAvecSperateurEgal, sRes2=azerty==**
+2022-06-23 21:11:44.572 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testPrefixeur(TestEncadreur.java:41)] - avec PrefixeurAvecSeparateurTiret, sRes1=**--azerty
+2022-06-23 21:11:44.572 DEBUG [main] [org.mygeneric.encadeur.test.TestEncadreur.testPrefixeur(TestEncadreur.java:45)] - avec PrefixeurAvecSeparateurEgal, sRes2=**==azerty

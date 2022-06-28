@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\encadreur"
+		},
+		{
+			"path": "..\\ext-txt-formatter"
+		},
+		{
+			"path": "..\\encadreur-starter-with-auto-config"
+		},
+		{
+			"path": "..\\mySpringBootApp"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

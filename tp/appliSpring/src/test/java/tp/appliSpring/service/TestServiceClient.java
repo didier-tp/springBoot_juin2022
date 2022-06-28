@@ -1,7 +1,5 @@
 package tp.appliSpring.service;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,15 +11,14 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import tp.appliSpring.AppliSpringApplication;
-import tp.appliSpring.dao.DaoClient;
 import tp.appliSpring.entity.Client;
 import tp.appliSpring.entity.Compte;
 
 //@RunWith(SpringRunner.class)  //si junit4
 @ExtendWith(SpringExtension.class) //si junit5/jupiter
 @SpringBootTest(classes= {AppliSpringApplication.class})//reprendre la configuration de la classe principale
-@ActiveProfiles("reInit,embeddedDB")
-//@ActiveProfiles("reInit,remoteDB")
+@ActiveProfiles({"reInit","embeddedDB"})
+//@ActiveProfiles({"reInit","remoteDB"})
 public class TestServiceClient {
 	
 	private static Logger logger = LoggerFactory.getLogger(TestServiceClient.class);

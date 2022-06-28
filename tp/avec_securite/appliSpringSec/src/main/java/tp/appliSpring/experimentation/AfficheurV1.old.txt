@@ -1,0 +1,34 @@
+package tp.appliSpring.experimentation;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Afficheur {
+	
+
+	@Autowired @Qualifier("FrancaisAnglais")
+	//@Autowired @Qualifier("FrancaisAllemand")
+	private Traducteur traducteurPrincipal/*=null*/;
+	
+	
+	public Afficheur() {
+		System.out.println("Dans le constructeur de Afficheur traducteurPrincipal="+traducteurPrincipal);
+		//éventuel nullPointerException ici si tentative d'utilisation de traducteurPrincipal
+	}
+	
+	@PostConstruct
+	public void initAfterInjectionqueJaime() {
+		System.out.println("Dans la methode préfixée par @PostConstruct traducteurPrincipal="+traducteurPrincipal);
+	    //délégation possible vers traducteurPrincipal ici
+	}
+	
+	public void traduireEtAfficher(String message) {
+		String traduction = this.traducteurPrincipal.traduire(message);
+		System.out.println("traduction="+traduction);
+	}
+
+}

@@ -1,0 +1,1 @@
+2022-06-23 21:11:45.839 DEBUG [main] [org.mygeneric.fmt.test.TestFormatter.testFormat(TestFormatter.java:30)] - en version snakeCase, sRes1=chameau_avec_des_bosses

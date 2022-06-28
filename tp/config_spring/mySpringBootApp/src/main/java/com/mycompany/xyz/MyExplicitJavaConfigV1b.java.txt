@@ -1,0 +1,40 @@
+package com.mycompany.xyz;
+
+import org.mygeneric.encadreur.Encadreur;
+import org.mygeneric.encadreur.Prefixeur;
+import org.mygeneric.encadreur.Suffixeur;
+import org.mygeneric.encadreur.impl.EncadreurAvecPrefixeEtSuffixe;
+import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurEgal;
+import org.mygeneric.encadreur.impl.PrefixeurAvecSeparateurTiret;
+import org.mygeneric.encadreur.impl.SuffixeurAvecSperateurTiret;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyExplicitJavaConfigV1 {
+	
+    @Bean
+	public Prefixeur monPrefixeurSpringAvecTiret() {
+		return new PrefixeurAvecSeparateurTiret("**");
+	}
+	
+
+    //@Bean
+	public Prefixeur monPrefixeurSpringAvecEgal() {
+		return new PrefixeurAvecSeparateurEgal("**");
+	}
+	
+
+    @Bean
+	public Suffixeur monSuffixeurSpring() {
+		return new SuffixeurAvecSperateurTiret("**");
+	}
+	
+    @Bean
+	public Encadreur monEncadreurSpring(Prefixeur prefixeur,
+			                            Suffixeur suffixeur) {
+		return new EncadreurAvecPrefixeEtSuffixe(prefixeur,suffixeur);
+	}
+
+}
+

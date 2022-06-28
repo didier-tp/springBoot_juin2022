@@ -1,0 +1,37 @@
+a) 
+- visualiser la dépendance @Autowired(required = false)	private Encadreur encadreur;
+  et le code de encadrer(){...} dans le fichier ....rest.BasicCtrl.java
+  
+ - effectuer un premier test via ".run as / java application" sur MySpringBootApplication.java
+ et en affichant http://localhost:8181/mySpringBootApp/index.html dans un navigateur
+ et en activant le lien hypertexte "encadrer unChameauAvecDesBosses"
+ 
+ ==> résultat escompté : {"message":"unChameauAvecDesBosses"}
+        sans encadrement !
+ -----------------------------------
+b)
+- compléter le fichier MyExplicitJavaConfigV1.java de façon à ce que
+des instances des classes PrefixeurAvecSeparateurTiret , SuffixeurAvecSperateurTiret
+et EncadreurAvecPrefixeEtSuffixe soient prises en charge comme des composants spring
+(explorer si besoin le code source du projet "encadreur" pour bien comprendre les structures)
+
+  
+ - effectuer des tests via ".run as / java application" sur MySpringBootApplication.java
+ et en affichant http://localhost:8181/mySpringBootApp/index.html dans un navigateur
+ et en activant le lien hypertexte "encadrer unChameauAvecDesBosses"
+
+==> résultat escompté : {"message":"**--UNCHAMEAUAVECDESBOSSES--**"}
+        avec encadrement !
+-----------------------------
+
+c) tester une cohabitation de PrefixeurAvecSeparateurTiret et PrefixeurAvecSeparateurEgal
+via @Qualifier("tiret") et @Qualifier("egal")
+et public Encadreur monEncadreurSpring(@Qualifier("....")Prefixeur prefixeur, Suffixeur suffixeur){...}
+
+==> résultat escompté : {"message":"**--UNCHAMEAUAVECDESBOSSES--**"}
+       ou bien {"message":"**==UNCHAMEAUAVECDESBOSSES--**"}
+-------------------------------
+
+d) Ajouter des annotations manquantes de type @Autowired , @Service , @Component , ...
+sur les classes ....service.ServiceDeviseV1  , ...rest.DeviseRestCtrl  , ...init.InitDataSet
+et effectuer des tests via les liens hypertextes "...devise..." et "convertir..." de index.html

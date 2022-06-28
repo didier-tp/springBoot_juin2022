@@ -20,8 +20,8 @@ import tp.appliSpring.entity.Compte;
 //@RunWith(SpringRunner.class)  //si junit4
 @ExtendWith(SpringExtension.class) //si junit5/jupiter
 @SpringBootTest(classes= {AppliSpringApplication.class})//reprendre la configuration de la classe principale
-@ActiveProfiles("reInit,embeddedDB")
-//@ActiveProfiles("reInit,remoteDB")
+//@ActiveProfiles({"reInit","embeddedDB"})
+@ActiveProfiles({"reInit","remoteDB"})
 public class TestServiceCompte {
 	
 	private static Logger logger = LoggerFactory.getLogger(TestServiceCompte.class);

@@ -64,11 +64,14 @@
 	</dependencies>
 
 	<build>
+	    <finalName>${project.artifactId}</finalName> <!-- appliSpring.jar --> 
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<mainClass>tp.appliSpring.AppliSpringApplication</mainClass>
+		        	<layout>ZIP</layout> <!-- build jar with all dependencies -->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -82,6 +85,7 @@
                 <version>3.0.2</version>
                 <!-- nb: version 3.2.0 avec bug a priori -->
             </plugin>
+            
 			<!--
 			 <plugin>
 		        <groupId>org.apache.maven.plugins</groupId>

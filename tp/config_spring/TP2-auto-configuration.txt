@@ -1,0 +1,90 @@
+a)
+- via "windows / show view / navigator" faire apparaitre l'onglet "navigator"
+et s'en servir pour mySpringBootApp/src/main/java/com.mycompany.xyz/MyExplicitJavaConfigV1.java
+en MyExplicitJavaConfigV1.java.txt
+et pour renommer MyExplicitJavaConfigV2.java.txt en MyExplicitJavaConfigV2.java
+- revenir ensuite sur l'onglet "project explorer"
+
+- commenter la dépendance encadreur dans le pom.xml du projet myspringBootApp
+- decommenter la dépendance encadreur-starter-with-auto-config dans le pom.xml du projet myspringBootApp
+
+- ajouter TEMPORAIREMENT @Import({MyEncadreurAutoConfiguration.class})
+au dessus de la classe MyExplicitJavaConfigV2 et laisser tout le code interne de MyExplicitJavaConfigV2
+en commentaire
+
+
+- ajouter les annotations @Configuration et @Bean au bons endroits de
+   org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration
+   dans le projet encadreur-stater-with-auto-config
+   
+ - arrêter et relancer MySpringBootApplication et visualiser le bon fonctionnement
+ via   http://localhost:8181/mySpringBootApp/index.html .
+ 
+ résultat escompté : {"message":"##--UNCHAMEAUAVECDESBOSSES--##"}
+                                  avec des ## !
+ --------------------------------------------------------------------
+ b - "magie de l'auto-configuration" ) 
+ - retirer @Import({MyEncadreurAutoConfiguration.class}) au dessus de MyExplicitJavaConfigV2
+ - arrêter et relancer MySpringBootApplication --> visualiser l'absence d'encadrement : {"message":"unChameauAvecDesBosses"}
+ 
+ - au sein du projet encadreur-starter-with-auto-config renommer le fichier
+   META-INF/to-rename.factories en  META-INF/spring.factories
+- visualiser le contenu de ce fichier
+
+ - arrêter et relancer MySpringBootApplication et visualiser le bon fonctionnement
+ via   http://localhost:8181/mySpringBootApp/index.html .
+ 
+  résultat escompté : {"message":"##--UNCHAMEAUAVECDESBOSSES--##"}
+                                  avec des ## !
+ ----------------------------------------------------------------
+ c)
+ - ajouter @ConditionalOnMissingBean sur les constructions de org.mygeneric.encadreur.Prefixeur , Suffixeur, Encadreur
+ dans org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration
+ dans le projet encadreur-stater-with-auto-config
+ 
+ - tester le comportement ( via   http://localhost:8181/mySpringBootApp/index.html )
+   et en commentant ou bien en decommentant le contenu interne de la classe MyExplicitJavaConfigV2
+   du projet mySpringBootApp
+   
+    résultat escompté : {"message":"##--UNCHAMEAUAVECDESBOSSES--##"}
+                        ou bien {"message":"**==UNCHAMEAUAVECDESBOSSES==**"}
+   
+   terminer la partie c en re-commentant  le contenu interne de la classe MyExplicitJavaConfigV2
+   --------------------------------------------------------------
+   d) 
+   - ajouter les annotations @ConditionalOnMissingClass et @ConditionalOnClass 
+   (concernant org.mygeneric.fmt.MyFormatter) aux bons endroits de org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration
+ dans le projet encadreur-stater-with-auto-config
+ - tester le comportement en arrêtant / relançant plusieurs fois  MySpringBootApplication et via le lien hypertexte
+ "unChameauAvecDesBosses" de    http://localhost:8181/mySpringBootApp/index.html 
+       * effectuer un premier essai sans décommenter la dépendance ext-txt-formatter dans le pom.xml de mySpringBootApp
+       * effectuer un second essai en décommentant la dépendance ext-txt-formatter dans le pom.xml de mySpringBootApp
+         et en effectuant un arrêt/relance de l'application.
+         
+résultat escompté :         
+ 	              { message	 : "##--UNCHAMEAUAVECDESBOSSES--##" }
+ 	ou bien {"message":"##--un_chameau_avec_des_bosses--##"} avec ext-txt-formatter .
+ ---------------------------------------------------------------------
+ e) 
+ - aux bons endroits de org.mygeneric.encadreur.autoconfigure.MyEncadreurAutoConfiguration et de 
+ org.mygeneric.encadreur.properties.EncadreurProperties dans le projet encadreur-stater-with-auto-config
+ ajouter  @Bean EncadreurProperties encadreurProperties , @ConfigurationProperties(prefix="encadreur") 
+ et @ConfigurationPropertiesScan .
+ 
+ NB: cette configuration servira à charger en mémoire la partie suivante de src/main/resources/application.yml
+ du projet mySpringBootApp :
+ 
+ encadreur:
+  prefixeur:
+    affixe: '>>'
+    separateur: '-o-'
+  suffixeur:
+    affixe: '<<'
+    separateur: '-o-'
+    
+ - effectuer idéalement plusieurs essais en modifiant les valeurs au sein du fichier application.yml
+  et en effectant des "refresh" de index.html et en réactivant le lien "unChameauAvecDesBosses" .
+
+resultat escompté :
+   {"message":">>-o-un_chameau_avec_des_bosses-o-<<"}
+ 

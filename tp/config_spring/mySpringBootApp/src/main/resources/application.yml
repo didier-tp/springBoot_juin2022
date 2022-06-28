@@ -1,0 +1,30 @@
+# .yml (ou .yaml) = syntaxe alternative à .properties
+# IMPORTANT = indentation via double espaces mais pas de tabulation !
+# http://localhost:8181/mySpringBootApp
+server:
+  servlet:
+    context-path: /mySpringBootApp
+  port: 8181
+  
+logging:
+  level:
+    root: WARN
+    com.mycompany.xyz: DEBUG  
+
+spring:
+    jpa:
+      repositories:
+        enabled: true
+
+encadreur:
+  prefixeur:
+    affixe: '>>>'
+    separateur: '-x-'
+  suffixeur:
+    affixe: '<<<'
+    separateur: '-x-'
+
+#si elements de liste en .yml .yaml
+#liste:
+#  - elt: valeur1
+#  - elt: valeur2

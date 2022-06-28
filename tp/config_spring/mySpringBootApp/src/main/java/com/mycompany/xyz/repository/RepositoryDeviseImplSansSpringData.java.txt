@@ -1,0 +1,173 @@
+package com.mycompany.xyz.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Repository;
+
+import com.mycompany.xyz.entity.Devise;
+
+@Repository
+public class RepositoryDeviseImplSansSpringData implements RepositoryDevise {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	@Override
+	public List<Devise> findAll() {
+		return entityManager.createQuery("SELECT d FROM Devise d", Devise.class)
+				.getResultList();
+	}
+
+	@Override
+	public List<Devise> findAll(Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Devise> findAllById(Iterable<String> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Devise> List<S> saveAll(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void flush() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public <S extends Devise> S saveAndFlush(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteInBatch(Iterable<Devise> entities) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteAllInBatch() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Devise getOne(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Devise> List<S> findAll(Example<S> example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Devise> List<S> findAll(Example<S> example, Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Page<Devise> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Devise> S save(S entity) {
+        entityManager.persist(entity);
+		return entity;
+	}
+
+	@Override
+	public Optional<Devise> findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteById(String id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Devise entity) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteAll(Iterable<? extends Devise> entities) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public <S extends Devise> Optional<S> findOne(Example<S> example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Devise> Page<S> findAll(Example<S> example, Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Devise> long count(Example<S> example) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public <S extends Devise> boolean exists(Example<S> example) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Devise> findByChangeGreaterThanEqual(Double changeMini) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

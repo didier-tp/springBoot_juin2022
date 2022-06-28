@@ -1,0 +1,168 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] encadreur                                                          [jar]
+[INFO] ext-txt-formatter                                                  [jar]
+[INFO] encadreur-starter-with-auto-config                                 [jar]
+[INFO] mySpringBootApp                                                    [jar]
+[INFO] buildAll                                                           [pom]
+[INFO] 
+[INFO] ----------------------< org.mygeneric:encadreur >-----------------------
+[INFO] Building encadreur 0.0.1-SNAPSHOT                                  [1/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ encadreur ---
+[INFO] Deleting C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ encadreur ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ encadreur ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ encadreur ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ encadreur ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ encadreur ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ encadreur ---
+[INFO] Building jar: C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\target\encadreur-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ encadreur ---
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\target\encadreur-0.0.1-SNAPSHOT.jar to C:\Users\d2fde\.m2\repository\org\mygeneric\encadreur\0.0.1-SNAPSHOT\encadreur-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur\pom.xml to C:\Users\d2fde\.m2\repository\org\mygeneric\encadreur\0.0.1-SNAPSHOT\encadreur-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------< org.mygeneric:ext-txt-formatter >-------------------
+[INFO] Building ext-txt-formatter 0.0.1-SNAPSHOT                          [2/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ext-txt-formatter ---
+[INFO] Deleting C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ext-txt-formatter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ext-txt-formatter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ext-txt-formatter ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ ext-txt-formatter ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ ext-txt-formatter ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ ext-txt-formatter ---
+[INFO] Building jar: C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\target\ext-txt-formatter-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ ext-txt-formatter ---
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\target\ext-txt-formatter-0.0.1-SNAPSHOT.jar to C:\Users\d2fde\.m2\repository\org\mygeneric\ext-txt-formatter\0.0.1-SNAPSHOT\ext-txt-formatter-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\ext-txt-formatter\pom.xml to C:\Users\d2fde\.m2\repository\org\mygeneric\ext-txt-formatter\0.0.1-SNAPSHOT\ext-txt-formatter-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] ----------< org.mygeneric:encadreur-starter-with-auto-config >----------
+[INFO] Building encadreur-starter-with-auto-config 0.0.1-SNAPSHOT         [3/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ encadreur-starter-with-auto-config ---
+[INFO] Deleting C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur-starter-with-auto-config\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ encadreur-starter-with-auto-config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ encadreur-starter-with-auto-config ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur-starter-with-auto-config\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ encadreur-starter-with-auto-config ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur-starter-with-auto-config\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ encadreur-starter-with-auto-config ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ encadreur-starter-with-auto-config ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ encadreur-starter-with-auto-config ---
+[INFO] Building jar: C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur-starter-with-auto-config\target\encadreur-starter-with-auto-config-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ encadreur-starter-with-auto-config ---
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur-starter-with-auto-config\target\encadreur-starter-with-auto-config-0.0.1-SNAPSHOT.jar to C:\Users\d2fde\.m2\repository\org\mygeneric\encadreur-starter-with-auto-config\0.0.1-SNAPSHOT\encadreur-starter-with-auto-config-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\encadreur-starter-with-auto-config\pom.xml to C:\Users\d2fde\.m2\repository\org\mygeneric\encadreur-starter-with-auto-config\0.0.1-SNAPSHOT\encadreur-starter-with-auto-config-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] -------------------< com.mycompany:mySpringBootApp >--------------------
+[INFO] Building mySpringBootApp 0.0.1-SNAPSHOT                            [4/5]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ mySpringBootApp ---
+[INFO] Deleting C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ mySpringBootApp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ mySpringBootApp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 25 source files to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ mySpringBootApp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ mySpringBootApp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ mySpringBootApp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ mySpringBootApp ---
+[INFO] Building jar: C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\target\mySpringBootApp-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.3.8.RELEASE:repackage (repackage) @ mySpringBootApp ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ mySpringBootApp ---
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\target\mySpringBootApp-0.0.1-SNAPSHOT.jar to C:\Users\d2fde\.m2\repository\com\mycompany\mySpringBootApp\0.0.1-SNAPSHOT\mySpringBootApp-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\mySpringBootApp\pom.xml to C:\Users\d2fde\.m2\repository\com\mycompany\mySpringBootApp\0.0.1-SNAPSHOT\mySpringBootApp-0.0.1-SNAPSHOT.pom
+[INFO] 
+[INFO] -----------------------< com.mycompany:buildAll >-----------------------
+[INFO] Building buildAll 0.0.1-SNAPSHOT                                   [5/5]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ buildAll ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ buildAll ---
+[INFO] Installing C:\tp\local-git-didier-tp-repositories\spring_nantes_juin2022\tp\config_spring\buildAll\pom.xml to C:\Users\d2fde\.m2\repository\com\mycompany\buildAll\0.0.1-SNAPSHOT\buildAll-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for buildAll 0.0.1-SNAPSHOT:
+[INFO] 
+[INFO] encadreur .......................................... SUCCESS [  1.616 s]
+[INFO] ext-txt-formatter .................................. SUCCESS [  0.268 s]
+[INFO] encadreur-starter-with-auto-config ................. SUCCESS [  0.964 s]
+[INFO] mySpringBootApp .................................... SUCCESS [  4.248 s]
+[INFO] buildAll ........................................... SUCCESS [  0.012 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.326 s
+[INFO] Finished at: 2022-06-23T21:18:40+02:00
+[INFO] ------------------------------------------------------------------------

@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import tp.appliSpring.AppliSpringApplication;
@@ -17,6 +18,8 @@ import tp.appliSpring.entity.Compte;
 //@RunWith(SpringRunner.class)  //si junit4
 @ExtendWith(SpringExtension.class) //si junit5/jupiter
 @SpringBootTest(classes= {AppliSpringApplication.class})//reprendre la configuration de la classe principale
+@ActiveProfiles({"reInit","embeddedDB"})
+//@ActiveProfiles({"reInit","remoteDB"})
 public class TestDaoCompte {
 	
 	private static Logger logger = LoggerFactory.getLogger(TestDaoCompte.class);
