@@ -6,10 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="COMPTE")
+@NamedQuery(name="Compte.findByClientIdAvecRequeteSpecifique" , 
+            query="SELECT cpt FROM Compte cpt WHERE cpt.client.id = ?1")
 public class Compte {
 
     @Id //pk

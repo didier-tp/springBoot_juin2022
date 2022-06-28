@@ -2,6 +2,8 @@ package tp.appliSpring.dao;
 
 import java.util.List;
 
+import javax.persistence.NamedQuery;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import tp.appliSpring.entity.Compte;
@@ -20,6 +22,9 @@ public interface DaoCompte extends JpaRepository<Compte,Long>{
 	List<Compte>  findBySoldeGreaterThanEqual(double soldeMini);
 	List<Compte>  findByClientId(long numClient);
 	             //Compte comporte client d'où findByClient
-	             //et Commpte.client comporte id d'où findByClientId
+	             //et Commpte.client de type Client comporte id d'où findByClientId
+	
+	//requete dans @NamedQuery(name="Compte.findByClientIdAvecRequeteSpecifique", ...) sur classe Compte
+	List<Compte>  findByClientIdAvecRequeteSpecifique(long numClient);
 	
 }

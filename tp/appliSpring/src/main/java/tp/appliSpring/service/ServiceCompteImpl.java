@@ -54,7 +54,8 @@ public class ServiceCompteImpl implements ServiceCompte{
 
 	@Override
 	public List<Compte> rechercherComptesDuClient(long numClient) {
-		return daoCompte.findByClientId(numClient);
+		//return daoCompte.findByClientId(numClient);
+		return daoCompte.findByClientIdAvecRequeteSpecifique(numClient);
 	}
 
 	
