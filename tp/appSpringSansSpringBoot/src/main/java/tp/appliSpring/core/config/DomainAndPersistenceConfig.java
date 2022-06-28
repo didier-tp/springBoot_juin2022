@@ -37,7 +37,7 @@ public class DomainAndPersistenceConfig {
 	public EntityManagerFactory entityManagerFactory(JpaVendorAdapter jpaVendorAdapter, DataSource dataSource) {
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(jpaVendorAdapter);
-		factory.setPackagesToScan("tp.appliSpring.entity");
+		factory.setPackagesToScan("tp.appliSpring.core.entity");
 		factory.setDataSource(dataSource);
 		Properties jpaProperties = new Properties(); // java.util
 		jpaProperties.setProperty("javax.persistence.schema-generation.database.action", "drop-and-create"); // à partir

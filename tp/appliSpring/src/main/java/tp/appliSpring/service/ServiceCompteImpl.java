@@ -14,7 +14,8 @@ import tp.appliSpring.entity.Compte;
 @Service //classe de Service prise en charge par spring
 public class ServiceCompteImpl implements ServiceCompte{
 	
-	@Qualifier("simu") //ou bien @Qualifier("jpa")
+	//@Qualifier("simu") //ou bien 
+	@Qualifier("jpa")
 	@Autowired //injection de dépendance par annotation
 	           //daoCompte sera initialisée par Spring pour
 	           //référencer un composant existant compatible 

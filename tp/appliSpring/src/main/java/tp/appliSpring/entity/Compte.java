@@ -10,9 +10,11 @@ import javax.persistence.Table;
 @Table(name="COMPTE")
 public class Compte {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //pk
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment en base
+               //et la valeur auto_incrémentée fremonte en mémoire ici.
     private Long numero;
+    
     private String label;
     private Double solde;
     
