@@ -49,7 +49,7 @@ public class ServiceCompteImpl implements ServiceCompte{
 
 	@Override
 	public List<Compte> rechercherTousComptes() {
-		return null;
+		return daoCompte.findAll();
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class ServiceCompteImpl implements ServiceCompte{
 
 	@Override
 	public void supprimerCompte(long numCpt) {
-		// TODO Auto-generated method stub
+		daoCompte.deleteById(numCpt);
 		
 	}
 

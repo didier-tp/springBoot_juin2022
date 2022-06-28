@@ -1,5 +1,7 @@
 package tp.appliSpring.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import tp.appliSpring.entity.Compte;
@@ -13,6 +15,7 @@ public interface DaoCompte extends JpaRepository<Compte,Long>{
                         save(Compte)
                         deleteById(...)
      */
-
-    //...
+     
+    //methode de recherche complémentaire selon convention de nom de méthode
+	List<Compte>  findBySoldeGreaterThanEqual(double soldeMini);
 }
