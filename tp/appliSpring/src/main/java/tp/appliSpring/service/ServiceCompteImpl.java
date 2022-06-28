@@ -12,6 +12,7 @@ import tp.appliSpring.dao.DaoCompte;
 import tp.appliSpring.entity.Compte;
 
 @Service //classe de Service prise en charge par spring
+@Transactional
 public class ServiceCompteImpl implements ServiceCompte{
 	
 	//@Qualifier("simu") //ou bien 
@@ -67,14 +68,17 @@ public class ServiceCompteImpl implements ServiceCompte{
 	}
 
 	@Override
-	@Transactional
+	//@Transactional(/*propagation = Propagation.REQUIRED */)
+	//NB: @Transactional peut être placé ici ou bien sur l'ensemble de la classe
 	public void transferer(double montant, long numCptDeb, long numCptCred) {
 		Compte cptDeb = daoCompte.findById(numCptDeb).get();
+		//cptDeb est ici à l'état détache si pas de @Transactional
+		//et à l'état persistant si @Transactional
 		cptDeb.setSolde(cptDeb.getSolde() - montant);
-		daoCompte.save(cptDeb); //utile que si pas de @Transactional
+		//daoCompte.save(cptDeb); //utile que si pas de @Transactional
 		
 		Compte cptCred = daoCompte.findById(numCptCred).get();
 		cptCred.setSolde(cptCred.getSolde() + montant);
-		daoCompte.save(cptCred); //utile que si pas de @Transactional
+		//daoCompte.save(cptCred); //utile que si pas de @Transactional
 	}
 }
