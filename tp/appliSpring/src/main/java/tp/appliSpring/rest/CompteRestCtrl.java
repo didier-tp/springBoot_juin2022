@@ -3,6 +3,8 @@ package tp.appliSpring.rest;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -61,8 +63,9 @@ public class CompteRestCtrl {
 		
 	//http://localhost:8080/appliSpring/api-bank/compte 
     //avec { "numero" : null , "label" : "compteXy" , "solde" : 90.0 }
+    // mais pas { "numero" : null , "label" : "c" , "solde" : -90.0 }
 	@PostMapping("")	
-	public CompteDto postCompte(@RequestBody CompteDto compteDto) {
+	public CompteDto postCompte(@Valid @RequestBody CompteDto compteDto) {
 		Compte compte = new Compte(compteDto.getNumero(),
 				                   compteDto.getLabel(),
 				                   compteDto.getSolde());
