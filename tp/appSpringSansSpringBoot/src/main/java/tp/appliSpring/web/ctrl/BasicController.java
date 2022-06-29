@@ -12,7 +12,7 @@ public class BasicController {
 		System.out.println("BasicController load ...");
 	}
 
-	//http://localhost:8080/basic/helloworld
+	//http://localhost:8080/mvc/basic/helloworld
 	@RequestMapping("/helloWorld")
 	public String helloWorld(Model model) {
 		model.addAttribute("message", "Hello World!");

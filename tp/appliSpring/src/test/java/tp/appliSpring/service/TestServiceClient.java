@@ -1,5 +1,7 @@
 package tp.appliSpring.service;
 
+import javax.annotation.Resource;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,7 +25,9 @@ public class TestServiceClient {
 	
 	private static Logger logger = LoggerFactory.getLogger(TestServiceClient.class);
 
-	@Autowired
+	//@Autowired @Qualifier("serviceCompteImpl")
+	//@Resource()
+	@Resource(name="serviceCompteImpl")
 	private ServiceCompte serviceCompte; //aider à tester
 	
 	@Autowired

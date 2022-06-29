@@ -17,6 +17,7 @@ public class TraducteurConfig {
 	private String traducteurClasse; //TraducteurFrancaisAnglais ou bien TraducteurFrancaisEspagnol
 	
 	@Bean //la chose construite sera vue comme un composant spring
+	//@Bean(name = "traducteurPourSpring")
 	public Traducteur traducteurPourSpring() {
 		if(traducteurClasse.equals("TraducteurFrancaisEspagnol"))
 			return new TraducteurFrancaisEspagnol();

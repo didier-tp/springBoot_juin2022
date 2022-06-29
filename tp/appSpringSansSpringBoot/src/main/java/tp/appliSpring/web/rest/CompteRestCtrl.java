@@ -23,7 +23,7 @@ public class CompteRestCtrl {
 		System.out.println("CompteRestCtrl load ...");
 	}
 
-	//http://localhost:appSpring/bank-api/compte
+	//http://localhost:appSpring/mvc/bank-api/compte
 	@GetMapping("")
 	public List<CompteDto> getCompteByCriteria() {
 		List<CompteDto> listeCompteDto = new ArrayList<>();

@@ -10,8 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import tp.appliSpring.dao.DaoCompte;
 import tp.appliSpring.entity.Compte;
-
-@Service //classe de Service prise en charge par spring
+//classe de Service prise en charge par spring
+@Service() //nom du composant spring = nom_classe_avec_minuscule = serviceCompteImpl
+//@Service("serviceCompteImpl")
 @Transactional
 public class ServiceCompteImpl implements ServiceCompte{
 	
