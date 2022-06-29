@@ -12,6 +12,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="CLIENT")
 @NamedQuery(name="Client.findByIdWithComptes",
@@ -29,6 +31,7 @@ public class Client {
     //email , adresse , telephone
     
     @OneToMany(mappedBy = "client" , fetch = FetchType.LAZY)
+    @JsonIgnore //pas nécessaire si DTO
     private List<Compte> comptes = new ArrayList<>(); //+get/set
     
     public Client() {
