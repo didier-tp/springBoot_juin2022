@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import tp.appliSpring.dto.CompteDto;
-import tp.appliSpring.dto.Message;
 import tp.appliSpring.entity.Compte;
+import tp.appliSpring.exception.NotFoundException;
 import tp.appliSpring.service.ServiceCompte;
 
 @RestController
@@ -32,6 +30,7 @@ public class CompteRestCtrl {
 		return new CompteDto(compte.getNumero(),compte.getLabel(),compte.getSolde());
 	}*/
 	
+	/*
 	//http://localhost:8080/appliSpring/api-bank/compte/1
 		@GetMapping("/{numCompte}")
 		//ancienne version: public Compte getCompteByNum(Long numCpt) {
@@ -43,6 +42,19 @@ public class CompteRestCtrl {
 			else 
 			    return new ResponseEntity<Message>(new Message("compte pas trouve pour numero = " + numCpt) ,
 			    		                           HttpStatus.NOT_FOUND);//404
+		}
+	*/
+	
+	//http://localhost:8080/appliSpring/api-bank/compte/1
+		@GetMapping("/{numCompte}")
+		//ancienne version: public Compte getCompteByNum(Long numCpt) {
+		public CompteDto getCompteByNum(@PathVariable("numCompte") Long numCpt) {
+			Compte compte = serviceCompte.rechercherCompteParNumero(numCpt);
+			if(compte==null) 
+				throw new NotFoundException("compte pas trouve pour numero = " + numCpt);
+			    //avec @ResponseStatus(HttpStatus.NOT_FOUND=404) au dessus de la classe NotFoundException
+			else
+			   return new CompteDto(compte.getNumero(),compte.getLabel(),compte.getSolde());
 		}
 	
 	//http://localhost:8080/appliSpring/api-bank/compte
