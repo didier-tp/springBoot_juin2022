@@ -22,7 +22,7 @@ public class Client {
 
     @Id //pk
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment en base
-               //et la valeur auto_incrémentée fremonte en mémoire ici.
+               //et la valeur auto_incrémentée remonte en mémoire ici.
     private Long id;
     
     private String prenom;
