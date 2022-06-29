@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,6 +58,21 @@ public class CompteRestCtrl {
 			else
 			   return new CompteDto(compte.getNumero(),compte.getLabel(),compte.getSolde());
 		}
+		
+	//http://localhost:8080/appliSpring/api-bank/compte 
+    //avec { "numero" : null , "label" : "compteXy" , "solde" : 90.0 }
+	@PostMapping("")	
+	public CompteDto postCompte(@RequestBody CompteDto compteDto) {
+		Compte compte = new Compte(compteDto.getNumero(),
+				                   compteDto.getLabel(),
+				                   compteDto.getSolde());
+		Compte compteSauvegarde = serviceCompte.sauvegarderCompte(compte);
+		return new CompteDto(compteSauvegarde.getNumero(),
+				             compteSauvegarde.getLabel(),
+				             compteSauvegarde.getSolde());
+		//on renvoie une copie des données insérées en base
+		//avec la clef primaire souvent auto-incrémentée
+	}
 	
 	//http://localhost:8080/appliSpring/api-bank/compte
 	//http://localhost:8080/appliSpring/api-bank/compte?numClient=1
