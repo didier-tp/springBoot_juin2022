@@ -8,6 +8,11 @@ import lombok.Setter;
 @Getter @Setter
 @Entity //entity de données qui persiste en base
 @Table(name="Compte")
+@NamedQuery(name="Compte.findByNumeroDeClientQueJaime" ,
+           query="SELECT c FROM Compte c WHERE c.client.numero = ?1 ")
+//requête JPA Query Langage (proche de SQL) où tous les noms sont en java
+// (pas des tables mais des classes , pas de colonnes mais des attributs)
+// ?1 signifie valeur du premier paramètre de la fonction de recherche
 public class Compte {
 
     @Id //identifiant (pk)
@@ -20,7 +25,7 @@ public class Compte {
     private Double solde;
 
     @ManyToOne //many Compte to one Client
-    @JoinColumn(name="num_compte") //nom de la colonne clef étrangère dans la table des comptes
+    @JoinColumn(name="num_client") //nom de la colonne clef étrangère dans la table des comptes
     private Client client;
 
     @java.lang.Override

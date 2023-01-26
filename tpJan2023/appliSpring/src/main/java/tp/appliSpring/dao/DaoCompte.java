@@ -25,5 +25,9 @@ public interface DaoCompte extends CrudRepository<Compte,Integer>{
       .deleteById(Integer numero)
    */
     List<Compte> findBySoldeGreaterThanEqual(double soldeMini); //méthode de recherche selon convention de nom de méthode
-
+    List<Compte> findByClientNumero(int numClient); //finbBy + "sous partie client" de la classe Compte
+                                                          // + "sous partie numero" de la clesses Client
+   List<Compte> findByNumeroDeClientQueJaime(int numClient); //sans convention de nom et avec select personnalisé
+                                                             //dans @NamedQuery(name="Compte.findByNumeroDeClientQueJaime")
+                                                             //placée au dessus de la classe de données Compte
 }
