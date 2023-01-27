@@ -20,6 +20,19 @@ public class CompteRestCtrl {
 
    //on peut éventuellement injecter le dao en direct (c'est possible)
 
+    //url : http://localhost:8080/appliSpring/api-bank/compte/4
+    //à déclencher en mode DELETE depuis postman ou angular
+    @DeleteMapping("/{numCompte}")
+    public ResponseEntity<String> deleteCompteByNum(@PathVariable("numCompte")  Integer numCompte){
+        Compte compte =  serviceCompte.rechercherCompteParNumero(numCompte);
+        if(compte == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404
+        else {
+            serviceCompte.supprimerCompte(numCompte);
+            return new ResponseEntity<String>("compte bien supprimé pour numero " + numCompte, HttpStatus.OK); //200
+        }
+    }
+
     //url : http://localhost:8080/appliSpring/api-bank/compte/1
     //@RequestMapping(value="/{numCompte}" , method= RequestMethod.GET)
     @GetMapping("/{numCompte}")
@@ -44,7 +57,7 @@ public class CompteRestCtrl {
     @GetMapping("")
     public List<CompteDto> getCompteByNum(@RequestParam(value="soldeMini",required=false)  Double soldeMini,
                                        @RequestParam(value="numClient",required=false)  Integer numClient){
-       if(soldeMini==null && numClient ==null)
+       if( soldeMini==null && numClient ==null )
            return  DtoConverter.compteListToCompteDtoList( serviceCompte.rechercherTousComptes() );
        else
            if(soldeMini!=null && numClient ==null)

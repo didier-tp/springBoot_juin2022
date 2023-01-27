@@ -14,7 +14,8 @@ public class AppliSpringApplication {
 		//on choisi des profiles au démarrage de l'application:
 		// "postgres" ou "h2"
 		// "reInit" pour réInitialiser un jeu de données
-		app.setAdditionalProfiles("postgres","reInit");
+		//app.setAdditionalProfiles("postgres","reInit");
+		app.setAdditionalProfiles("postgres"); //sans reTnit si spring.jpa.hibernate.ddl-auto=none
 
 		ConfigurableApplicationContext context = app.run(args);
 		System.out.println("http://localhost:8080/appliSpring");
