@@ -7,6 +7,8 @@ import java.util.List;
 public interface ServiceCompte {
     Compte rechercherCompteParNumero(int numCompte);
     List<Compte> rechercherComptesDuClient(int numClient);
+    List<Compte> rechercherTousComptes();
+    List<Compte> rechercherComptesAvecSoldeMini(double soldeMini);
     Compte sauvegarder(Compte compte); //saveOrUpdate
     void supprimerCompte(int numCompte);
     void transferer(double montant , int numCptDeb , int numCptCred);//virement
