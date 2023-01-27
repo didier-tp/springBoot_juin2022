@@ -10,6 +10,8 @@ public interface ServiceCompte {
     List<Compte> rechercherTousComptes();
     List<Compte> rechercherComptesAvecSoldeMini(double soldeMini);
     Compte sauvegarder(Compte compte); //saveOrUpdate
+    Compte sauvegarderNouveau(Compte compte); //INSERT INTO
+    Compte sauvegarderExistant(Compte compte); //UPDATE
     void supprimerCompte(int numCompte);
     void transferer(double montant , int numCptDeb , int numCptCred);//virement
 }

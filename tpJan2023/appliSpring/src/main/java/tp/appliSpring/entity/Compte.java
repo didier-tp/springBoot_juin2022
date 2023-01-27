@@ -2,6 +2,7 @@ package tp.appliSpring.entity;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +25,9 @@ public class Compte {
     
     private Double solde;
 
+    @JsonIgnore //pour ignorer la partie en dessous (ici client)
+    //lors de la conversion java vers json d'un compte
+    //éventuellement nécessaire si PAS de DTO
     @ManyToOne //many Compte to one Client
     @JoinColumn(name="num_client") //nom de la colonne clef étrangère dans la table des comptes
     private Client client;

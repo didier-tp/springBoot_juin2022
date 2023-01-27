@@ -9,6 +9,12 @@ import java.util.stream.Collectors;
 
 public class DtoConverter {
 
+    public static Compte compteDtoToCompte(CompteDto compteDto){
+        Compte compte = new Compte();
+        BeanUtils.copyProperties(compteDto,compte);
+        return compte;
+    }
+
     public static CompteDto compteToCompteDto(Compte compte){
         //return new CompteDto(compte.getNumero(), compte.getLabel(), compte.getSolde());
         CompteDto compteDto = new CompteDto();

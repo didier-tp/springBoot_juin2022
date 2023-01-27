@@ -50,6 +50,19 @@ public class ServiceCompteImpl implements ServiceCompte{
     }
 
     @Override
+    public Compte sauvegarderNouveau(Compte compte) {
+        return daoCompte.save(compte); //améliorable
+    }
+
+    @Override
+    public Compte sauvegarderExistant(Compte compte) {
+        if(daoCompte.existsById(compte.getNumero()))
+            return daoCompte.save(compte);
+        else
+            throw new RuntimeException("impossible de mettre a jour le compte qui existe pas de numero " + compte.getNumero());
+    }
+
+    @Override
     public void supprimerCompte(int numCompte) {
           daoCompte.deleteById(numCompte);
     }
